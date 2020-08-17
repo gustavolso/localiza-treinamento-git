@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Soma_Fator_Bomba_Ano__c</fullName>
+    <externalId>false</externalId>
+    <label>Soma Fator Bomba Ano</label>
+    <summarizedField>Bomba__c.Fator_de_Dano__c</summarizedField>
+    <summaryForeignKey>Bomba__c.Ano_de_Fabricacao__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

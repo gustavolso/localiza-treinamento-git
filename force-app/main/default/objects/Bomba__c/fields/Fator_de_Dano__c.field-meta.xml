@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fator_de_Dano__c</fullName>
+    <externalId>false</externalId>
+    <formula>Alcance__c  *  Dano__c *  (  
+IF(ISPICKVAL( Tamanho__c , &quot;Pequeno&quot;), 1, 
+IF(ISPICKVAL( Tamanho__c , &quot;Médio&quot;), 2, 
+IF(ISPICKVAL( Tamanho__c , &quot;Grande Porte&quot;), 3, 0)))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fator de Dano</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
