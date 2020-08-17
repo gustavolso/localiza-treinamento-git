@@ -1,0 +1,247 @@
+<apex:page controller="CadastroLeadController" showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <apex:slds />
+    </head>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            min-height: 100%;
+        }
+    </style>
+    <script>
+        function SimulacaoAvancar() {
+            document.getElementById('divFormulario').style.display = 'none';
+            document.getElementById('divFormulario2').style.display = '';
+        }
+
+        function SimulacaoVoltar() {
+            document.getElementById('divFormulario').style.display = '';
+            document.getElementById('divFormulario2').style.display = 'none';
+        }
+
+        function handleTabClick(id) {
+            var ul = document.getElementById("ulTabHeader");
+            var items = ul.getElementsByTagName("li");
+            for (var i = 0; i < items.length; ++i) {
+                items[i].classList.remove("slds-active");
+            }
+
+            var divTabs = document.getElementById("divTabs");
+            var itemsTabs = divTabs.children;
+
+            for (var i = 0; i < itemsTabs.length; ++i) {
+                itemsTabs[i].classList.remove("slds-show");
+                itemsTabs[i].classList.add("slds-hide");
+            }
+
+            var tabNumber = id.split("-");
+            var tab = document.getElementById("tab-" + tabNumber[1]);
+            tab.classList.add("slds-show");
+            tab.classList.remove("slds-hide");
+
+            var tabHeader = document.getElementById(id);
+            tabHeader.classList.add("slds-active");
+        }
+    </script>
+
+    <body>
+        <div class="slds-page-header" style="padding: 0px;" role="banner">
+            <div style="max-width: 1000px;margin: 0 auto;">
+                <div class="slds-tabs_default" style="background-image:url(resource/parceiro_{!parceiroImagem}/cabecalho.jpg);height: 80px;">
+                    <div class="slds-float--right">
+                        <ul class="slds-tabs_default__nav" role="tablist" id="ulTabHeader">
+                            <li id="liTabHeader-1" class="slds-tabs_default__item slds-active" title="Inicial" role="presentation" onclick="handleTabClick(this.id)">
+                                <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-controls="tab-default-1" id="tab-default-1__item">Inicial</a>
+                            </li>
+                            <li id="liTabHeader-4" class="slds-tabs_default__item" title="Inicial" role="presentation" onclick="handleTabClick(this.id)">
+                                <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-controls="tab-default-4" id="tab-default-4__item">Simulação</a>
+                            </li>
+                            <li id="liTabHeader-3" class="slds-tabs_default__item" title="Contato" role="presentation" onclick="handleTabClick(this.id)">
+                                <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- div style="max-width: 1000px;margin: 0 auto;height:100vh;"> -->
+            <div id="divTabs" style="height:100%;">
+                <div id="tab-1" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item" style="background-size: 100% auto;background-image:url(resource/parceiro_{!parceiroImagem}/inicial.jpg);background-repeat: no-repeat;height: 100%;">
+                    <div style="max-width: 1000px;margin: 0 auto;height:100vh;">
+                    	<div class="slds-grid slds-gutters slds-wrap" style="padding:10px">
+                        <div class="slds-p-horizontal--small slds-m-top--medium slds-size--1-of-1 slds-align--absolute-center" style="padding-top:50px">
+                            <h1>
+                            	<span class="slds-page-header__title slds-truncate" title="Titulo institucional">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem</span>
+                            </h1>
+                        </div>
+                        <div class="slds-p-horizontal--small slds-m-top--medium slds-size--1-of-1 slds-align--absolute-center">
+                            <input type="button" class="slds-button slds-button--brand" value="Simulação" onclick="handleTabClick('liTabHeader-4')" />
+                        </div>
+                        <div class="slds-col slds-size_6-of-12" style="padding-top:40px">
+                            <div class="slds-box">
+                                <h1>
+									<span class="slds-page-header__title slds-truncate" title="Titulo institucional">Institucional</span>
+                                </h1>
+                                <br />
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_6-of-12" style="padding-top:40px">
+                            <div class="slds-box">
+                                <h1>
+									<span class="slds-page-header__title slds-truncate" title="Titulo institucional">O que é geração energia?</span>
+                                </h1>
+                                <br />
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>    
+                    </div>
+                </div>
+                <div id="tab-3" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item" style="background-size: 100% auto;background-image:url(resource/parceiro_{!parceiroImagem}/contato.jpg);background-repeat: no-repeat;height: 100%;">
+                    <div style="max-width: 1000px;margin: 0 auto;height:100vh;">
+                        <apex:form >
+                        <div class="slds-grid slds-gutters slds-wrap" style="padding:10px">
+                            <div class="slds-col slds-size_1-of-1">
+                                <div class="slds-box">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate" title="Titulo institucional">Entre em contato</span>
+                                    </h1>
+                                    <br />
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <div class="slds-form-element slds-hint-parent">
+                                    <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Nome</span>
+                                    <div class="slds-form-element__control">
+                                        <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                    </div>
+                                </div>
+                             </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <div class="slds-form-element slds-hint-parent">
+                                    <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Email</span>
+                                    <div class="slds-form-element__control">
+                                        <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                    </div>
+                                </div>
+                             </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <div class="slds-form-element slds-hint-parent">
+                                    <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Observação</span>
+                                    <div class="slds-form-element__control">
+                                        <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                    </div>
+                                </div>
+                             </div>
+                             <div class="slds-p-horizontal--small slds-m-top--medium slds-size--1-of-1 slds-align--absolute-center">
+                                <input type="button" class="slds-button slds-button--brand" value="Enviar" onclick="handleTabClick('liTabHeader-4')" />
+                            </div>
+                             
+                             
+                        </div>
+                       </apex:form> 
+                   </div>
+                </div>
+                <div id="tab-4" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item" style="background-size: 100% auto;background-image:url(resource/parceiro_{!parceiroImagem}/simulacao.jpg);background-repeat: no-repeat;height: 100%;">
+                    <div style="max-width: 1000px;margin: 0 auto;height:100vh;">
+                    <apex:form >
+                        <div id="divFormulario" class="slds-grid slds-gutters slds-wrap" style="padding:10px">
+                            <div class="slds-col slds-size_6-of-12">
+                            </div>
+                            <div class="slds-col slds-size_6-of-12">
+                                <div class="slds-col slds-size_12-of-12">
+                                    <div class="slds-form-element slds-hint-parent">
+                                        <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Nome</span>
+                                        <div class="slds-form-element__control">
+                                            <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_12-of-12">
+                                    <div class="slds-form-element slds-hint-parent">
+                                        <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Sobrenome</span>
+                                        <div class="slds-form-element__control">
+                                            <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_12-of-12">
+                                    <div class="slds-form-element slds-hint-parent">
+                                        <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Email</span>
+                                        <div class="slds-form-element__control">
+                                            <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_12-of-12">
+                                    <div class="slds-form-element slds-hint-parent">
+                                        <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Email</span>
+                                        <div class="slds-form-element__control">
+                                            <apex:inputField styleClass="slds-input" value="{!lead.Email}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_12-of-12">
+                                    <div class="slds-form-element slds-hint-parent">
+                                        <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Email</span>
+                                        <div class="slds-form-element__control">
+                                            <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_12-of-12 slds-align--absolute-center" style="padding-top:10px">
+                                    <input type="button" class="slds-button slds-button--brand" value="Avançar" onclick="SimulacaoAvancar()" />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="divFormulario2" style="display:none">
+                            <div id="divFormularioPagina2" class="slds-grid slds-gutters slds-wrap" style="padding:10px">
+                                <div class="slds-col slds-size_6-of-12">
+                                </div>
+                                <div class="slds-col slds-size_6-of-12">
+                                    <div class="slds-col slds-size_12-of-12">
+                                        <div class="slds-form-element slds-hint-parent">
+                                            <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Classe de consumo</span>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_12-of-12">
+                                        <div class="slds-form-element slds-hint-parent">
+                                            <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Tipo de tarifa</span>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_12-of-12">
+                                        <div class="slds-form-element slds-hint-parent">
+                                            <span class="slds-form-element__label"><strong><abbr class="slds-required" title="required">*</abbr></strong>Média de consumo dos últimos 12 meses*</span>
+                                            <div class="slds-form-element__control">
+                                                <apex:inputField styleClass="slds-input" value="{!lead.Name}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_12-of-12 slds-align--absolute-center" style="padding-top:10px">
+                                        <input type="button" class="slds-button slds-button--brand" value="Voltar" onclick="SimulacaoVoltar()" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </apex:form>
+                        </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </body>
+    </html>
+</apex:page>

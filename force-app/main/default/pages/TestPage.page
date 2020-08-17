@@ -1,0 +1,29 @@
+<apex:page >
+   <html>
+      <head>
+         <apex:includeLightning />
+      </head>
+      <body class="slds-scope">
+         <div class="slds-scope">                                                 
+         <div id="flowContainer" />
+         <script>
+            $Lightning.use("c:flowVF2", function() {
+               // Create the flow component and set the onstatuschange attribute
+               $Lightning.createComponent("lightning:flow", {},
+                  "flowContainer",
+                  function (component) {
+                     var inputVariables = [{
+                        name: "variavelID",
+                        type: "String",
+                        value: "500f4000005BKmhAAG"
+                    }];
+                      
+                     component.startFlow("AnexoTeste", inputVariables);
+                  }
+               );
+            });
+         </script>
+         </div>
+      </body>
+   </html>
+</apex:page>

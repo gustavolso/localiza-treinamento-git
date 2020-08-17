@@ -1,0 +1,17 @@
+<aura:component controller="MinhaController" implements="flexipage:availableForAllPageTypes,force:hasRecordId"
+    access="GLOBAL">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="conta" type="Account" />
+    <div style='background-color:white'>
+        {!v.recordId}
+        
+        
+        <br />
+        {!v.conta.Site}
+        
+        
+          <lightning:button variant="brand" aura:id="btnSalvar" label="Salvar" title="Salvar"
+                    class="slds-button slds-button_neutral slds-align-bottom" onclick="{!c.Salvar}" />
+    </div>
+    </aura:component>
