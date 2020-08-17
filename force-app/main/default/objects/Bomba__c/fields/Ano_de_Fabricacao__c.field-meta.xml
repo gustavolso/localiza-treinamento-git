@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ano_de_Fabricacao__c</fullName>
+    <externalId>false</externalId>
+    <label>Ano de Fabricacao</label>
+    <referenceTo>Ano__c</referenceTo>
+    <relationshipLabel>Bombas</relationshipLabel>
+    <relationshipName>Bombas</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

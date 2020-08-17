@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regra_Fator_de_Dano_Anual</fullName>
+    <active>true</active>
+    <errorConditionFormula>(
+Ano_de_Fabricacao__r.Soma_Fator_Bomba_Ano__c 
++  Fator_de_Dano__c 
+)  &gt; 6000</errorConditionFormula>
+    <errorMessage>A soma do fator de dano de todos as bombas deste ano, não podem passar de 6000</errorMessage>
+</ValidationRule>

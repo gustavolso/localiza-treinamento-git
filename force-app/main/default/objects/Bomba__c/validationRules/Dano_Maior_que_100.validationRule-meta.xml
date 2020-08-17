@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dano_Maior_que_100</fullName>
+    <active>true</active>
+    <description>Dano maior que 100</description>
+    <errorConditionFormula>Dano__c &gt; 100</errorConditionFormula>
+    <errorDisplayField>Dano__c</errorDisplayField>
+    <errorMessage>O dano não pode ser maior que 100</errorMessage>
+</ValidationRule>
